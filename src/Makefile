@@ -9,6 +9,7 @@ ROOTGLIBS  = $(shell root-config --glibs)
 ROOTFLAGS   = $(ROOTCFLAGS) $(ROOTLIBS) $(ROOTGLIBS) 
 CXXFLAGS  += $(ROOTCFLAGS) -I$(ODELIB) -Wall -O3
 LDFLAGS    = $(ROOTLIBS) $(ROOTGLIBS) -Wl,-rpath,$(ODELIB) -L$(ODELIB) -lode
+GSLFLAGS   = -lgsl -lgslcblas
 GXX	   = g++ $(CXXFLAGS)
 
 
@@ -33,7 +34,7 @@ baseball2: baseball2.cpp $(ODELIB)/RKn.hpp
 	$(GXX) $(CXXFLAGS) -o$@ $@.cpp $(LDFLAGS)
 
 projGSL: projGSL.cpp
-	$(GXX) $(CXXFLAGS) -o$@ $@.cpp $(LDFLAGS)
+	$(GXX) $(CXXFLAGS) -o$@ $@.cpp $(LDFLAGS) $(GSLFLAGS)
 
 
 clean:
