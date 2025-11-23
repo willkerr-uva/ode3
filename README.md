@@ -50,3 +50,16 @@ Two examples are given for using ODE solvers from the scipy.integrate sub-packag
     Solution (projScPY.py[ipynb]) using an older interface scipy.integrate.odeint¶ (see comments here: https://docs.scipy.org/doc/scipy/reference/integrate.html).  I do not recommend using this interface any longer.
 
 The notebook versions contain additional comments on using the integrators.
+
+## Project Results
+
+### Part A: Terminal Velocity
+Results and plot are available in `src/vterm.pdf`.
+Energy conservation was verified with air resistance = 0 (energy_conservation.png).
+
+### Part B: Baseball Study (Problem 1)
+**Program**: `src/baseball1.cpp`
+
+**Results**:
+Required Initial Velocity: ~48.05 m/s
+Final Height at Plate: 0.90 m
